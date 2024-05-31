@@ -23,11 +23,17 @@ We prefer to use ddev for local development.  If you don't have it installed, in
 7. Navigate to your storybook: https://drupal-storybook.ddev.site:6006
 
 ## General usage
+
+### Regenerating stories on file save
 To prepare your modules and themes for use with storybook you'll mainly rely upon the drush command `ddev drush storybook:generate-all-stories`.  If you find yourself executing that command frequently you can automate the execute of the command by doing the following:
 1. SSH into your ddev instance: `ddev ssh`
 2. Run `watch drush storybook:generate-all-stories`
 
 The command will run when it detects file changes, or every 2 seconds.
+
+### Disabling Drupal caching
+
+Storybook module output is cached - to make sure that every change is immediately reflected in Storybook, [disable the cache](https://www.drupal.org/docs/develop/development-tools/disabling-and-debugging-caching).
 
 ## Troubleshooting
 ### CORS
